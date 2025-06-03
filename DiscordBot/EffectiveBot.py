@@ -9,10 +9,12 @@ import asyncio
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
+#Initilization
 bot = commands.Bot(command_prefix='!', intents=intents)#, help_command=None)
 
 #Initilization confirmation
@@ -26,13 +28,12 @@ async def on_message(message):
         return
 
     if message.content.startswith('!coinflip'):
-        i = random.randint(1,2)
+        ans = random.choice(['Heads', 'Tails'])
         await message.delete()
-        if i == 1:
-            ans = await message.channel.send("Heads")
-        else:
-            ans = await message.channel.send("Tails")
+        sending_message = await message.channel.send(ans)
         await asyncio.sleep(5)
-        await ans.delete()
+        await sending_message.delete()
     
+    await bot.process_commands(message)
+
 bot.run(token, log_handler=handler, log_level = logging.DEBUG)
