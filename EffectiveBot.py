@@ -36,16 +36,19 @@ async def on_message(message):
         await message.channel.send(f"{message.author.mention} SUHWOO")
     
     if lottery == 1:
+        user1 = await message.guild.fetch_member(223414300486795265)
+        user2 = await message.guild.fetch_member(90286939487346688)
         response = random.choice([
             f"{message.author.mention} sybau 🥀💔 ",
             f"{message.author.mention} FUCK YOU",
             "ts so kevin 🥀",
             "gurt: yo",
-            "Justin is the best Valorant player @pogcast",
+            f"Justin is the best Valorant player {user1.mention}",
             "Deez Nutz","amongus","dabs seductively","🫃",":ericlove:",
-            "@omykun",":head:"
+            f"{user2.mention}",":head:"
         ])
         await message.channel.send(response)
+    
     await bot.process_commands(message)
 
 bot.run(token, log_handler=handler, log_level = logging.DEBUG)
