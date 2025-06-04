@@ -29,10 +29,8 @@ async def on_message(message):
 
     if message.content.startswith('!coinflip'):
         ans = random.choice(['Heads', 'Tails'])
-        await message.delete()
-        sending_message = await message.channel.send(ans)
-        await asyncio.sleep(5)
-        await sending_message.delete()
+        await message.channel.send(ans)
+
     
     await bot.process_commands(message)
 
