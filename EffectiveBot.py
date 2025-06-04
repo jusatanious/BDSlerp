@@ -54,13 +54,17 @@ async def on_message(message):
 @bot.command()
 async def forcewin(ctx):
     await ctx.message.delete()
+    user1 = await ctx.guild.fetch_member(223414300486795265)
+    user2 = await ctx.guild.fetch_member(90286939487346688)
     response = random.choice([
-        f"{ctx.author.mention} sybau 🥀💔 ",
-        f"{ctx.author.mention} FUCK YOU",
-        "ts so kevin 🥀",
-        "gurt: yo",
-        "Justin is the best Valorant player @pogcast"
-    ])
+            f"{ctx.author.mention} sybau 🥀💔 ",
+            f"{ctx.author.mention} FUCK YOU",
+            "ts so kevin 🥀",
+            "gurt: yo",
+            f"Justin is the best Valorant player {user1.mention}",
+            "Deez Nutz","amongus","dabs seductively","🫃",":ericlove:",
+            f"{user2.mention}",":head:"
+        ])
     await ctx.send(response)
 
 bot.run(token, log_handler=handler, log_level = logging.DEBUG)
