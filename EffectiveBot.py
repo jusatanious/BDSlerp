@@ -51,4 +51,16 @@ async def on_message(message):
     
     await bot.process_commands(message)
 
+@bot.command()
+async def forcewin(ctx):
+    await ctx.message.delete()
+    response = random.choice([
+        f"{ctx.author.mention} sybau 🥀💔 ",
+        f"{ctx.author.mention} FUCK YOU",
+        "ts so kevin 🥀",
+        "gurt: yo",
+        "Justin is the best Valorant player @pogcast"
+    ])
+    await ctx.send(response)
+
 bot.run(token, log_handler=handler, log_level = logging.DEBUG)
