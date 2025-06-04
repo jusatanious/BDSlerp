@@ -31,6 +31,8 @@ async def on_message(message):
         ans = random.choice(['Heads', 'Tails'])
         await message.channel.send(ans)
 
+    if bot.user.mentioned_in(message):
+        await message.channel.send(f"{message.author.mention} SUHWOO")
     
     await bot.process_commands(message)
 
