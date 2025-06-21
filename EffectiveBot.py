@@ -26,7 +26,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    lottery = random.randint(1, 100)
+    lottery = random.randint(1, 85)
     if message.author == bot.user:
         return
 
@@ -41,13 +41,14 @@ async def on_message(message):
             gif = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWN5ZDQ1b2RrNG45b2M4YjUwdm1iYjI5cHVzOXpjbW94NmoxMzNwZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xSM46ernAUN3y/giphy.gif"
             await message.channel.send(f"{gif}")
         if content.lower() == "fuck you" and anger >= 3:
-            gif = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXlmem13M3oyY2cyN20yMG81aTkxeW1wZzNzejR2OGNhYWowZHo0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11tTNkNy1SdXGg/giphy.gif"
-            anger = 0
-            await message.channel.send(f"{gif}")
-        if content.lower() == "fuck you":
-            anger += 1
-            gif = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmx3OGs1Y3FsZTRhZjF6eGZnNWVzaXJ2cGZrY2U5d2NzczAzd2psbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KzGCAlMiK6hQQ/giphy.gif"
-            await message.channel.send(f"{gif}")
+            if anger >= 3:
+                gif = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXlmem13M3oyY2cyN20yMG81aTkxeW1wZzNzejR2OGNhYWowZHo0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11tTNkNy1SdXGg/giphy.gif"
+                anger = 0
+                await message.channel.send(f"{gif}")
+            else:
+                anger += 1
+                gif = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmx3OGs1Y3FsZTRhZjF6eGZnNWVzaXJ2cGZrY2U5d2NzczAzd2psbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KzGCAlMiK6hQQ/giphy.gif"
+                await message.channel.send(f"{gif}")
         else:
             await message.channel.send(f"{message.author.mention} SUHWOO")
     
@@ -57,8 +58,8 @@ async def on_message(message):
             f"{message.author.mention} sybau 🥀💔 ",
             f"{message.author.mention} FUCK YOU",
             "ts so kevin 🥀",
-            "gurt: yo","amongus","dabs seductively","🫃",":ericlove:",
-            f"{user2.mention}",":head:","boots up hearthstone",
+            "gurt: yo","amongus","*dabs seductively*","🫃",":ericlove:",
+            f"{user2.mention}",":head:","*boots up hearthstone*",
             "I’m on my Deriod cuh 😢💔",
             "I'm not loyal to anyone, i'm a demon",
             "You see this, I really did this, I'm him",
