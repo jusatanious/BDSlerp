@@ -40,7 +40,7 @@ async def on_message(message):
         if content.lower() == "suhwoo":
             gif = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWN5ZDQ1b2RrNG45b2M4YjUwdm1iYjI5cHVzOXpjbW94NmoxMzNwZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xSM46ernAUN3y/giphy.gif"
             await message.channel.send(f"{gif}")
-        if content.lower() == "fuck you" and anger >= 3:
+        if content.lower() == "fuck you":
             if anger >= 3:
                 gif = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXlmem13M3oyY2cyN20yMG81aTkxeW1wZzNzejR2OGNhYWowZHo0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11tTNkNy1SdXGg/giphy.gif"
                 anger = 0
