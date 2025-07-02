@@ -30,6 +30,11 @@ async def on_message(message):
     if message.author == bot.user:
         return
 
+    if message.author == message.guild.fetch_member(90290721394794496):
+        face = random.randint(1, 25)
+        if face == 1:
+            await message.channel.send(stickers=[discord.Object(id=1173000023945003090)])
+            
     if message.content.startswith('!coinflip'):
         ans = random.choice(['Heads', 'Tails'])
         await message.channel.send(ans)
@@ -64,7 +69,8 @@ async def on_message(message):
             "I'm not loyal to anyone, i'm a demon",
             "You see this, I really did this, I'm him",
             "My money long, my pockets deep, no pocket watchin in these parts",
-            "They must have amnesia because they forgot that I'm him."
+            "They must have amnesia because they forgot that I'm him.",
+            "I'm Devin 2"
         ])
         await message.channel.send(response)
     
@@ -73,19 +79,6 @@ async def on_message(message):
 @bot.command()
 async def forcewin(ctx):
     await ctx.message.delete()
-    user2 = await ctx.guild.fetch_member(90286939487346688)
-    response = random.choice([
-            f"{ctx.author.mention} sybau 🥀💔 ",
-            f"{ctx.author.mention} FUCK YOU",
-            "ts so kevin 🥀",
-            "gurt: yo","amongus","dabs seductively","🫃",":ericlove:",
-            f"{user2.mention}",":head:","boots up hearthstone",
-            "I’m on my Deriod cuh 😢💔",
-            "I'm not loyal to anyone, i'm a demon",
-            "You see this, I really did this, I'm him",
-            "My money long, my pockets deep, no pocket watchin in these parts",
-            "They must have amnesia because they forgot that I'm him."
-        ])
-    await ctx.send(response)
+    await ctx.channel.send(stickers=[discord.Object(id=1173000023945003090)])
 
 bot.run(token, log_handler=handler, log_level = logging.DEBUG)
