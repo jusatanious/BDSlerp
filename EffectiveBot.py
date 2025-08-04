@@ -16,7 +16,7 @@ intents.members = True
 
 #Initilization
 bot = commands.Bot(command_prefix='!', intents=intents)#, help_command=None)
-
+#Bot mood
 anger = 0
 
 #Initilization confirmation
@@ -80,9 +80,5 @@ async def on_message(message):
 async def forcewin(ctx):
     await ctx.message.delete()
     await ctx.channel.send(stickers=[discord.Object(id=1173000023945003090)])
-    
-@bot.command()
-async def boobs(ctx):
-    await ctx.channel.send("(.)(.)")
 
 bot.run(token, log_handler=handler, log_level = logging.DEBUG)
